@@ -3,6 +3,8 @@ package dev.cadastrodecomputador.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_client")
 @Getter
@@ -23,5 +25,8 @@ public class Client {
     private String email;
 
     private String cellphone;
+
+    @OneToMany(mappedBy = "client")
+    private List<Computer> computers;
 
 }

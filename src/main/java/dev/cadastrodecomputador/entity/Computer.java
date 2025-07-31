@@ -23,10 +23,11 @@ public class Computer {
     @Column(nullable = false)
     private String brand;
 
-    @Column(nullable = false)
-    private String clientName;
-
     @CreationTimestamp
     private LocalDate registrationDate;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id", nullable = false)
+    private Client client;
 
 }
